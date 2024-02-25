@@ -11,6 +11,7 @@
   "dependencies": {
     "@mantine/core": "^7.5.3",
     "@mantine/hooks": "7.5.3",
+    "@mantine/notifications": "^7.5.3",
     "@tabler/icons-react": "^2.47.0",
     "axios": "^1.6.7",
     "next": "14.0.1",

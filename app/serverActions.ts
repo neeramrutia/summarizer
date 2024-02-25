@@ -3,24 +3,28 @@ import { NextResponse } from "next/server";
 import axios from "axios";
 
 export async function fetchASIN(productName:string) {
-    const options = {
-        method: 'GET',
-        url: 'https://real-time-amazon-data.p.rapidapi.com/search',
-        params: {
-          query:productName,
-          page: '1',
-          country: 'IN',
-          category_id: 'aps'
-        },
-        headers: {
-          'X-RapidAPI-Key': process.env.XRapidAPIKeyASIN,
-          'X-RapidAPI-Host': process.env.XRapidAPIHostASIN
-        }
-      };
-        const response = await axios.request(options);
+    try {
+        const options = {
+            method: 'GET',
+            url: 'https://real-time-amazon-data.p.rapidapi.com/search',
+            params: {
+              query:productName,
+              page: '1',
+              country: 'IN',
+              category_id: 'aps'
+            },
+            headers: {
+              'X-RapidAPI-Key': process.env.XRapidAPIKeyASIN,
+              'X-RapidAPI-Host': process.env.XRapidAPIHostASIN
+            }
+          };
+            const response = await axios.request(options);
+            const products = response.data.data.products;
+            return products[0].asin;
+    } catch (error) {
+        return "error"
+    }
     
-        const products = response.data.data.products;
-        return products[0].asin;
           
 }
 
@@ -28,14 +32,20 @@ export async function fetchASIN(productName:string) {
 export async function fetchComments(country:string , ASIN:string) {
     // const res = await fetch("")
     // const data = res.json();
-
+    switch(country){
+        case "India" : country="in"; break;
+        case "UK" : country="uk"; break;
+        case "US" : country="us"; break;
+        default : country="in";
+    }
+        console.log("country : " , country)
 
     const options = {
         method: 'GET',
         url: 'https://amazon-merchant-data.p.rapidapi.com/get-reviews',
         params: {
           asin: ASIN,
-          country: 'in',
+          country: country,
           page: '1'
         },
         headers: {
@@ -47,8 +57,10 @@ export async function fetchComments(country:string , ASIN:string) {
       try {
           let content = ""
           const response = await axios.request(options);
-          for (let i = 0;i<10 ;i++){
-            content += response.data.reviews[i].text + "  ";
+          if( response.data.reviews.lenght == 0)
+          return "null"
+          for (let i of response.data.reviews){
+            content += i.text + "  ";
           }
           return content;
       } catch (error) {
