@@ -61,7 +61,7 @@ export default function HomePage() {
     commments = await fetchComments(country , ASIN)
     console.log("comments : " , commments)
     const response = await getAWSData(commments);
-    if(commments == "error" || commments == ""){
+    if(commments == "error" || commments == null || commments == "null"){
       notifications.show({
         title: 'No comments found to summarize.',
         message: 'Please verify the product name or try changing the country',

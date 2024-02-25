@@ -57,7 +57,7 @@ export async function fetchComments(country:string , ASIN:string) {
       try {
           let content = ""
           const response = await axios.request(options);
-          if( response.data.reviews.lenght == 0)
+          if(response == undefined || response.data.reviews.length == 0)
           return "null"
           for (let i of response.data.reviews){
             content += i.text + "  ";
