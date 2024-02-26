@@ -22,14 +22,13 @@ The Product Review Summarizer project aims to simplify the process of understand
 - AWS lambda: to deploy serverless function.
 - Mantine UI provider 
 
-## Usage
 
 ## Demo
 - [Deployed project](https://summarizer-ecru.vercel.app)
 - [Project Demo Video](https://youtu.be/lgrpNCssips) - Watch a demo of the Project.
 
 ## Contributors
-1. - [Neer Amrutia](https://github.com/neeramrutia) : Frontend & Backend
+1. - [Neer Amrutia](https://github.com/neeramrutia) : Frontend & Backend (Next JS)
 2. - [Shubham Chaniyara](https://github.com/shubhamchaniyara) : Implemented T5-large model in project
 3. - [Neel Vaghasiya](https://github.com/neel-03/) : Integrated serverless service(lambda function on aws)
 
