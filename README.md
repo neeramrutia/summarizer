@@ -14,7 +14,7 @@ The Product Review Summarizer project aims to simplify the process of understand
 - Web Interface: Users can access the summarization tool through a user-friendly web interface, making it accessible across devices.
 - Integration with Amazon API: The system integrates with the Amazon API to fetch real-time product reviews, ensuring the summarization is based on the latest data.
 - Personalized Summaries: Users have the option to customize summarization preferences, allowing them to focus on specific aspects or sentiments of the reviews.
-- Export Summaries: Summaries can be exported in various formats for further analysis or sharing purposes.
+
 
 ## Technologies Used
 
@@ -29,7 +29,7 @@ The Product Review Summarizer project aims to simplify the process of understand
 - [Project Demo Video](https://youtu.be/lgrpNCssips) - Watch a demo of the Project.
 
 ## Contributors
-1. Neer Amrutia : Frontend & Backend
-2. Shubham Chaniyara : Implemented T5-large model in project
-3. Neel Vaghasiya : Integrated serverless service(lambda function on aws)
+1. - [Neer Amrutia](https://github.com/neeramrutia) : Frontend & Backend
+2. - [Shubham Chaniyara](https://github.com/shubhamchaniyara) : Implemented T5-large model in project
+3. - [Neel Vaghasiya](https://github.com/neel-03/) : Integrated serverless service(lambda function on aws)
 
